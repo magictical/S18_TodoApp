@@ -25,14 +25,24 @@ $("li").click(function() {
 
 //Click on X to delete Todo
 $("span").click(function(event) {
-  //when child clicked it calls its parent elements so need to call off it.
-  //Todo that, use .stopPropagation()
   // .parent will choose the parent of the child element if use '.parent().parent()'
   // it delete second parent also.
   $(this).parent().fadeOut(500, function() {
+    //현재의 this는 클릭한 span이 아닌 this(이시점에서 span).parent()인 li가 된다.
     this.remove();
   });
+  //when child clicked it calls its parent elements. so need to call off it.
+  //Todo that, use .stopPropagation()
   event.stopPropagation();
-
-
 });
+
+// take user input and add it to li as a Todo
+$("input[type='text']").keypress(function(event) {
+  //use .which to find out which key has pressed
+  if(event.which === 13) {
+    //grabbing user input and assign to var
+    var todoText = $(this).val();
+    //create a new li and add it to the ul by .append() - string of HTML
+    $("ul").append("<li><span>X</span> " + todoText + "</li>");
+  }
+})
