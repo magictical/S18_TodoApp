@@ -48,6 +48,6 @@ $("input[type='text']").keypress(function(event) {
     //delete user input after pressing enter key
     $(this).val("");
     //create a new li and add it to the ul by .append() - string of HTML
-    $("ul").append("<li><span>X</span> " + todoText + "</li>");
+    $("ul").append("<li><span><i class=\"far fa-trash-alt\"></i></span> " + todoText + "</li>");
   }
 })
