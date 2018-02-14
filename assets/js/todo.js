@@ -21,3 +21,18 @@
 $("li").click(function() {
   $(this).toggleClass("compltedTodo");
 });
+
+
+//Click on X to delete Todo
+$("span").click(function(event) {
+  //when child clicked it calls its parent elements so need to call off it.
+  //Todo that, use .stopPropagation()
+  // .parent will choose the parent of the child element if use '.parent().parent()'
+  // it delete second parent also.
+  $(this).parent().fadeOut(500, function() {
+    this.remove();
+  });
+  event.stopPropagation();
+
+
+});
