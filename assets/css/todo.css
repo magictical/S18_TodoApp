@@ -42,6 +42,28 @@ li:nth-child(2n) {
   background: #f7f7f7;
 }
 
+span {
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  /* add animation effect - support*/
+  width: 0px;
+  /* add animation effect - support*/
+  display: inline-block;
+  /* add animation effect linear :  같은 속도로 효과적용 */
+  transition: 0.3s linear;
+  opacity: 0;
+}
+/* when hovering over the li change span */
+/* add animation effect - support*/
+li:hover span {
+  width: 40px;
+  opacity: 1.0;
+}
+
+
 input {
   font-size: 18px;
   background-color: #f7f7f7;
