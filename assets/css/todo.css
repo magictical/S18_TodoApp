@@ -22,6 +22,11 @@ body {
 /* apply 2 colors on every other li */
 li {
   background: #fff;
+  height: 40px;
+  /* this will take over 40px height as a line height.
+  letter will align on the center*/
+  line-height: 40px;
+  color: #666;
 }
 li:nth-child(2n) {
   background: #f7f7f7;
