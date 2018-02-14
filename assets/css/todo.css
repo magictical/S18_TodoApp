@@ -32,6 +32,16 @@ li:nth-child(2n) {
   background: #f7f7f7;
 }
 
+input {
+  font-size: 18px;
+  background-color: #f7f7f7;
+  width: 100%;
+  /* 4개로 나타낼 경우 12시부터 시계방향으로 4방위 */
+  padding: 13px 13px 13px 20px;
+  /* 테두리까지 포함해서 크기를 지정함(paddin + border but margin은 포함하지 않음) */
+  box-sizing: border-box;
+}
+
 #container {
   width: 360px;
   margin: 100px auto;
