@@ -19,6 +19,14 @@ body {
   font-family: Roboto;
 }
 
+/* apply 2 colors on every other li */
+li {
+  background: #fff;
+}
+li:nth-child(2n) {
+  background: #f7f7f7;
+}
+
 #container {
   width: 360px;
   margin: 100px auto;
