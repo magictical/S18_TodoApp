@@ -18,18 +18,21 @@
 
 
 //간단하게 css와 toggleClass 조합으로 style을 적용할 수 있다.
-$("li").click(function() {
+//.click() 대신 .on()을 사용한다. .on()은 이후에 추가될 element에
+//대해서도 listener를 적용할 수 있기때문이다.
+$("ul").on("click", "li", function() {
   $(this).toggleClass("compltedTodo");
 });
 
 
 //Click on X to delete Todo
-$("span").click(function(event) {
+//span 대신 부모요소인 ul을 지정하고 span을 변경한다.
+$("ul").on("click", "span", function(event) {
   // .parent will choose the parent of the child element if use '.parent().parent()'
   // it delete second parent also.
   $(this).parent().fadeOut(500, function() {
     //현재의 this는 클릭한 span이 아닌 this(이시점에서 span).parent()인 li가 된다.
-    this.remove();
+    $(this).remove();
   });
   //when child clicked it calls its parent elements. so need to call off it.
   //Todo that, use .stopPropagation()
@@ -42,6 +45,8 @@ $("input[type='text']").keypress(function(event) {
   if(event.which === 13) {
     //grabbing user input and assign to var
     var todoText = $(this).val();
+    //delete user input after pressing enter key
+    $(this).val("");
     //create a new li and add it to the ul by .append() - string of HTML
     $("ul").append("<li><span>X</span> " + todoText + "</li>");
   }
