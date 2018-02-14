@@ -73,6 +73,7 @@ input {
   /* 테두리까지 포함해서 크기를 지정함(paddin + border but margin은 포함하지 않음) */
   box-sizing: border-box;
   color: #2980b9;
+  border: 3px solid rgba(0,0,0,0);
 }
 
 input:focus {
