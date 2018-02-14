@@ -50,4 +50,9 @@ $("input[type='text']").keypress(function(event) {
     //create a new li and add it to the ul by .append() - string of HTML
     $("ul").append("<li><span><i class=\"far fa-trash-alt\"></i></span> " + todoText + "</li>");
   }
-})
+});
+
+//+아이콘 선택하고 input태그의 입력창(type='text')에 fade효과를 줌
+$(".fa-plus").click(function(){
+	$("input[type='text']").fadeToggle();
+});
